@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CACULATOR</title>
+</head>
+<body>
+<input type="number"  id="numb1"   placeholder="Nhập số thứ 1">
+<input type="number"  id ="numb2" placeholder="Nhập số thứ 2">
+<br>
+<br>
+<button  onclick="Plus()">Plus</button>
+<button onclick="Minus()">Minus</button>
+<button onclick="Mutiply()">Multiply</button>
+<button onclick="Divide()">Divide</button>
+<br>
+<br>
+<p>Result:</p>
+<div id = "result"></div>
+<script>
+    function Plus() {
+        let number1 = document.getElementById("numb1").value;
+        let number2 = document.getElementById("numb2").value;
+        let result = Number(number1) + Number(number2);
+        document.getElementById("result").innerHTML = result;
+
+    }
+</script>
+</body>
+</html>
