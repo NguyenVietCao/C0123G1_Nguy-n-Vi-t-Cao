@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phương trình Bậc 1</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhap a")
+    let b = +prompt("nhập b");
+    if(a==0 && b==0)
+    {
+        alert("Phương trình vô số nghiệm")
+    }else if(a==0 && b>0 || b<0){
+        alert("Phương trình vô nghiệm")
+    }else if(a<0 || a>0){
+        alert("phương trình có nghiệm duy nhất x ="+-b/a)
+    }else{
+        alert("vui lòng nhập lại")
+    }
+</script>
+</body>
+</html>

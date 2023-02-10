@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lãi ngân hàng</title>
+</head>
+<body>
+<script>
+   let p = +prompt("nhập số tiền đầu tư")
+   let r = +prompt("nhập lãi xuất hàng năm %")
+   let n = +prompt("nhâp thời gian gửi(năm)")
+   let a = p * Math.pow((1+(r*1/100)),n);
+   if(p!=0 && r!=0 && n!=0){
+     alert("Tiền lãi của bạn là:  "+a + "vnd")
+   }
+</script>
+
+</body>
+</html>

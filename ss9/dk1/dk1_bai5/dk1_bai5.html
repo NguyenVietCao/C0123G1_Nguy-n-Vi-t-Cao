@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoc</title>
+</head>
+<body>
+<script>
+  let a = +prompt("Điểm kiểm tra");
+  let b = +prompt("Điểm giữa kỳ");
+  let c = +prompt("Điểm cuối Kỳ");
+  let d = (a + b*2 + c*3)/6;
+  if(d < 5) {
+    alert("Học sinh yếu");
+  }else if(d > 5 && d < 7) {
+    alert("Học sinh trung bình");
+  }else if(d >= 7 && d < 8) {
+    alert("Học sinh khá");
+  }else if(d >=8 && d <= 10) {
+    alert("Học sinh giỏi");
+  }else{
+    alert("vui lòng nhập lại");
+  }
+</script>
+</body>
+</html>

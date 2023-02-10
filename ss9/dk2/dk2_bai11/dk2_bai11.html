@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thuế cá nhân</title>
+</head>
+<body>
+<script>
+  let a = +prompt("Lương chịu thuế ")
+  if(a<=5000000){
+    alert("Thuế là  :"+ a*(5/100) +"vnd")
+  }else if(a<=10000000){
+    alert("Thuế Phải Đóng : "+((a*10/100)-250000)+ "vnd");
+  }else if(a<=18000000){
+    alert("Thuế Phải Đóng Là : "+((a*15/100)-750000)+ "vnd")
+  }else if(a<=32000000){
+    alert("Thuế phải đóng là :"+((a*20/100)-1950000)+ "vnd")
+  }else if(a<=52000000){
+    alert("Thuế phải đóng là :"+ ((a*25/100)-4750000) + "vnd")
+  }else if(a<=80000000){
+    alert("Thuế phải đóng là: "+((a*30/100)-9750000)+ "vnd")
+  }else{
+    alert("Thuế phải đóng là: "+((a*35/100)-18150000)+ "vnd")
+  }
+</script>
+
+</body>
+</html>

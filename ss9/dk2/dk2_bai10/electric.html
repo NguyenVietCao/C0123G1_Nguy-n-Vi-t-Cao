@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let sl = prompt("nhaapj sanr luong")
+
+  let bc1 = 1678;
+  let bc2 = 1734;
+  let bc3 = 2014;
+  let bc4 = 2536;
+  let bc5 = 2834;
+  let bc6 = 2927;
+  if(sl<=50){
+    alert("thanh tien"+ sl*bc1)
+  }else if (sl<=100){
+    alert("thanh tien :"+ (bc1*50 +(sl-50)*bc2))
+  }else if(sl<=200){
+    alert("thanh tien :"+ (bc1*50 + bc2*50 + (sl-100)*bc3))
+  }else if( sl<= 300){
+      alert("thành tiền :"+(bc1*50 +bc2*50 +bc3*100 + (sl-200)*bc4))
+  }else if (sl<=400){
+      alert ("thành tiền :"+ (bc1*50 + bc2*50 + bc3*100 + 100*bc4 + (sl-300)*bc5))
+  }else {
+      alert ("thành tiền :"+ (bc1*50 + bc2*50 + bc3*100 + bc4*100 + bc5*100 + (sl-400)*bc6))
+  }
+
+</script>
+</body>
+</html>

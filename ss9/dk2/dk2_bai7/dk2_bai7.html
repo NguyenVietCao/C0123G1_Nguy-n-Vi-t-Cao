@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phương trình bậc 2</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhập a");
+    let b = +prompt("nhập b");
+    let c = +prompt("nhập c");
+    let dt = Math.pow(b,2) - 4*a*c;
+    if(dt<0){
+        alert("phương trình vô nghiệm")
+    }else if(dt = 0){
+        alert("phương trình có nghiệm kép x1 = x2 ="+ (-b/(2*a)))
+    }else if(dt>0){
+        alert("Phương trình có hai nghiệm x1 ="+(-b+Math.sqrt(dt))/(2*a) + "va x2 = "+ ((-b+Math.sqrt(dt))/(2*a)))
+    }else{
+        alert("vui lòng nhập lại")
+    }
+
+</script>
+</body>
+</html>
