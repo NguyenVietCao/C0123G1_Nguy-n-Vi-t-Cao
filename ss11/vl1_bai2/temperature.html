@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<script>
+  let t = +prompt("Vui lòng nhập nhiệt độ");
+  while (t>100 || t<20){
+
+    if (t<20){
+      alert("Vui lòng tăng nhiệt độ");
+      break;
+    }
+    if (t>100){
+      alert("vui lòng giảm nhiệt độ");
+      break;
+    }
+  }
+  alert("Nhiệt độ an toàn")
+
+</script>
+</body>
+</html>
