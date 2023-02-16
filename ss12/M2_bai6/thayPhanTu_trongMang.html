@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thay Phần Tử Trong Mảng</title>
+</head>
+<body>
+<script>
+  let str = prompt("Nhập chữ")
+  let array = [];
+  for (let i = 0; i < str.length; i++){
+    if (str[i] === "-"){
+      array.push("_")
+    }else{
+      array.push(str[i])
+    }
+  }
+  document.write(array.join(" "))
+</script>
+</body>
+</html>

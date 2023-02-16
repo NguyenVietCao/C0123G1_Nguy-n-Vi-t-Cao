@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm Từ</title>
+</head>
+<body>
+<script>
+  let array = prompt("nhập chữ");
+  let counter = 0;
+  let check = true;
+  for (let i = 0; i< array.length; i++){
+    if (array[i] === " "){
+      check = true;
+      continue;
+    }else if (check){
+      check = false;
+      counter ++
+    }
+  }
+  document.write(counter)
+</script>
+</body>
+</html>
