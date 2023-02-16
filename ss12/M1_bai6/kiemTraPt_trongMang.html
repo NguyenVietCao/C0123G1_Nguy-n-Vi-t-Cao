@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra phần tử trong mảng</title>
+</head>
+<body>
+
+<script>
+    let array = [43, -56, 10, 9, -11, 8,-12, 1, 78,2];
+    let v = +prompt("Mời Nhập số v");
+    let daTimThay;
+    for( let i = 0; i < array.length; i++){
+        if(v === array[i]) {
+            alert("V is in the array");
+            daTimThay = true;
+            break;
+            // document.write("v thuôc chuỗi")
+        }
+    }
+
+    if (!daTimThay) {
+        alert("V is not in the array")
+    }
+
+
+</script>
+</body>
+</html>

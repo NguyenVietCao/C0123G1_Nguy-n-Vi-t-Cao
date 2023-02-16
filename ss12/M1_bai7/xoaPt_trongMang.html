@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xoá Phần Tử Trong Mảng</title>
+</head>
+<body>
+<script>
+    let array = [10];
+    for ( let i=0; i<10; i++){
+        let mang = Number(prompt("Mời nhập phần tử thứ :" + (i+1) +"10 phần tử"));
+        array[i] = mang;
+    }
+    document.write("mảng số vừa nhập là :" +array + "<br>");
+  for(  let i = 0; i < 10; i++) {
+      for ( let j = i + 1; j < 10 ; j++){
+          if (array[j] > array[i] ){
+              let num = array[i];
+              array[i] = array[j];
+              array[j] = num;
+          }
+      }
+  }
+      document.write("Mảng được sắp xếp:  "+ array);
+
+</script>
+</body>
+</html>

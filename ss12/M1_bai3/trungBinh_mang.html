@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính trung bình trong mảng </title>
+</head>
+<body>
+<script>
+
+  let array = [43, 56, 10, 9, 11, 8,12, 1, 78,2];
+  let max = array[0];
+  let sum = 0;
+  let average;
+
+  for (let i=0; i < array.length; i++){
+    sum += array[i]
+    if (max < array[i]){
+      max = array[i];
+      average = sum/(array.length);
+    }}
+  document.write("số lớn nhất trong mảng:"+"<br>")
+  document.write(max + "<br>")
+  document.write("giá trị trung bình trong mảng là:"+"<br>")
+  document.write(average)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số lớn nhất</title>
+</head>
+<body>
+<script>
+  let array = [43, 56, 10, 9, 11, 8,12, 1, 78,2];
+  let max = array[0];
+  for (let i=0; i < array.length; i++){
+    if (max < array[i]){
+      max = array[i];
+    }}
+    document.write("số lớn nhất trong mảng:"+"<br>")
+    document.write(max + "<br>")
+    document.write("vị trí của nó trong mảng là:"+"<br>")
+    document.write(array.indexOf(max))
+
+</script>
+</body>
+</html>

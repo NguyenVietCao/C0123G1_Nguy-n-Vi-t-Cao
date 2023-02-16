@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sắp xếp mảng</title>
+</head>
+<body>
+<script>
+  let array = [43, -56, 10, 9, -11, 8,-12, 1, 78,2];
+  let v = +prompt("Mời Nhập số v");
+  for( let i = 0; i < array.length; i++) {
+    if (v === array[i]) {
+      array[i] = [];
+      array.push(0);
+    }
+  }
+  document.write(array);
+
+
+</script>
+</body>
+</html>
