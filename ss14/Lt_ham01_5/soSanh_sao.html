@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So sánh sao chòm sao</title>
+</head>
+<body>
+<label for="input">Nhập ngôi sao bạn thích</label>
+<input type="text" id = "input">
+<br>
+<button onclick="constellation()">Click</button>
+<script>
+  let stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe và Regulus"];
+  let constellations = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major và Leo"]
+  function constellation(a){
+      a = document.getElementById("input").value;
+      for (let i= 0; i <= a.length-1; i++){
+          if (a === stars[i]){
+              document.write("Ngôi sao của bạn thuộc chòm sao:   " + constellations[i]);
+              break;
+          }else{
+              document.write("Ngôi sao của bạn không có thực");
+              break;
+          }
+      }
+  }
+
+</script>
+</body>
+</html>

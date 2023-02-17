@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cộng Hai tham số</title>
+</head>
+<body>
+<label for="input1">First Number</label>
+<input id = "input1" type="number">;
+<br>
+<br>
+<label for="input2">Second Number</label>
+<input type="number" id = "input2">
+<br>
+<button onclick="sum()">Click</button>
+<br>
+<p id = "total"></p>;
+<script>
+  function sum(a,b){
+    a = +document.getElementById("input1").value;
+    b = +document.getElementById("input2").value;
+    if (a > b){
+      return document.getElementById("total").innerHTML = "Số nhỏ hơn vui lòng nhập lại"
+    }else if (a <= b){
+      sum = a + b
+      return document.getElementById("total").innerHTML = "Tổng là:  "+ sum
+    }
+  }
+</script>
+</body>
+</html>

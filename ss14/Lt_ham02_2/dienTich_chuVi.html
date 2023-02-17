@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện Tích - Chu Vi</title>
+</head>
+<body>
+<label for="input">Nhập Bán Kính</label>
+<input type="number" id = "input">
+<br>
+<button onclick="caculate()">Kết quả</button>
+<br>
+<p id = "result"></p>
+<script>
+  function caculate(){
+    let r = +document.getElementById("input").value;
+   let s = (r*2)*3.14;
+     document.getElementById("result").innerHTML = "Chu vi Hình Tròn:  "+ s + "<br>";
+   let c = (r*r)*3.14;
+     document.getElementById("result").innerHTML += "Diện Tích Hình Tròn:  "+ c;
+
+  }
+</script>
+
+</body>
+</html>
