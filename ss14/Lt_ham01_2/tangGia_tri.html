@@ -6,15 +6,15 @@
 </head>
 <body>
 <label for="input">Nhập số: </label>
-<input  id = "input" type="number">;
-<button type = "button" onclick="increaseNumberValue()">Tăng</button>
-<p id ="result"></p>
- <script>
-   function increaseNumberValue(inputA){
-     inputA = +document.getElementById("input").value;
-     inputA +=1;
-     return document.getElementById("result").innerHTML = "Giá trị đã được tăng:   "+ inputA
-   }
- </script>
+<input id="input" type="number">;
+<button type="button" onclick="increaseNumberValue()">Tăng</button>
+<p id="result"></p>
+<script>
+    function increaseNumberValue(inputA) {
+        inputA = +document.getElementById("input").value;
+        inputA += 1;
+        return document.getElementById("result").innerHTML = "Giá trị đã được tăng:   " + inputA;
+    }
+</script>
 </body>
 </html>

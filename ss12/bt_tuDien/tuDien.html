@@ -6,23 +6,23 @@
 </head>
 <body>
 <label for="string">Nhập số</label>
-<input name id= "string" type="text">
+<input name id="string" type="text">
 <button onclick="transcript()">Dịch</button>
-<p id = "result"></p>
+<p id="result"></p>
 <script>
-    function transcript(){
+    function transcript() {
         //orange
-        let arr_eng = ["banana", "apple", "orange", "pen", "pencill", "book"];
-        let arr_vie = ["chuối,", "táo", "cam", "bút", "bút chì", "sách"];
+        let arrEng = ["banana", "apple", "orange", "pen", "pencill", "book"];
+        let arrVie = ["chuối,", "táo", "cam", "bút", "bút chì", "sách"];
         let string = document.getElementById("string").value;
-        let index_eng = 0;
+        let indexEng = 0;
         let result = "";
-        for ( let i = 0; i< arr_eng.length; i++){
-            if (string == arr_eng[i]){
-                index_eng = i;
-                for (let j = 0; j< arr_vie.length; j++){
-                    if (index_eng == j){
-                        result= arr_vie[j];
+        for (let i = 0; i < arrEng.length; i++) {
+            if (string == arrEng[i]) {
+                indexEng = i;
+                for (let j = 0; j < arrVie.length; j++) {
+                    if (indexEng == j) {
+                        result = arrVie[j];
                     }
                 }
             }

@@ -6,18 +6,19 @@
 </head>
 <body>
 <label for="input">Mời Nhập Số</label>
-<input type="number" id = "input">
+<input type="number" id="input">
 <br>
 <br>
-<button onclick="square()">Bình Phương</button>;
+<button onclick="square()">Bình Phương</button>
+;
 <br>
-<p id = "result"></p>
+<p id="result"></p>
 <script>
-  function square(a){
-    a = document.getElementById("input").value;
-    let b = a * a
-    return document.getElementById("result").innerHTML = "Số bình phương của bạn là:  " + b
-  }
+    function square(a) {
+        a = document.getElementById("input").value;
+        let b = a * a;
+        return document.getElementById("result").innerHTML = "Số bình phương của bạn là:  " + b;
+    }
 </script>
 </body>
 </html>
