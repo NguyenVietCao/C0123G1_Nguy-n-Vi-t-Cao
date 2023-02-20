@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swap</title>
+</head>
+<body>
+<label for="input1">Nhập vào 1</label>
+<input type="text" id = "input1">
+<br>
+<br>
+<label for="input2">Nhập vào 2</label>
+<input type="text" id ="input2">
+<br>
+<p id = "result1"></p>
+<br>
+<button onclick = "check()">Check</button>
+<p id = "result2"></p>
+<script>
+    function check() {
+        let a = document.getElementById("input1").value;
+        let b = document.getElementById("input2").value;
+         let c = [a,b];
+        document.getElementById("result1").innerHTML = "Chuỗi ban dầu là: " + c;
+        c = [b,a];
+        document.getElementById("result2").innerHTML = " Chuỗi hoán đổi là: " + c;
+    }
+
+</script>
+</body>
+</html>

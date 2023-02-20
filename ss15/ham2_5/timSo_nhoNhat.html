@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm Số Nhỏ Nhất</title>
+</head>
+<body>
+<label for="input1">Mời Nhập Số thứ nhất</label>;
+<input type="number" id = "input1">;
+<br>
+<br>
+<label for="input2">Mời Nhập Số thứ hai</label>;
+<input type="number" id = "input2">;
+<br>
+<br>
+<label for="input3">Mời Nhập Số thứ ba</label>;
+<input type="number" id = "input3">;
+<br>
+<br>
+<button onclick ="seach()">Tìm Kiếm</button>;
+<p id = "result"></p>;
+<script>
+  function seach(){
+
+       let a = +document.getElementById("input1").value;
+       let b = +document.getElementById("input2").value;
+       let c = +document.getElementById("input3").value;
+     if (a<b && a<c){
+     document.getElementById("result").innerHTML = "Số Nhỏ Nhất Là:  "+ a;
+     }else if (b<c){
+         document.getElementById("result").innerHTML = "Số Nhỏ Nhất Là:  "+ b;
+     }else {
+         document.getElementById("result").innerHTML = "Số Nhỏ Nhất Là:  "+ c;
+     }
+  }
+</script>
+
+</body>
+</html>

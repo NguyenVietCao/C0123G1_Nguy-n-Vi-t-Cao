@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm Ký Tự Trong Mảng</title>
+</head>
+<body>
+<label for="inputArray">Nhập Chuỗi</label>
+<input type="text" id = "inputArray">
+<br>
+<br>
+<label for="inputCharacter">Nhập Ký Tự</label>;
+<input type="text" id = "inputCharacter">;
+<br>
+<br>
+<button onclick="check()">Kiểm Tra</button>;
+<br>
+<br>
+<p id = "result"></p>
+<script>
+    function check() {
+        let a = document.getElementById("inputArray").value;
+        let b = document.getElementById("inputCharacter").value;
+        let count = 0;
+        for (let i = 0; i<=a.length; i++){
+            if (b === a[i]){
+                count++
+               if(count === 0){
+                   document.getElementById("result").innerHTML = "-1"
+               }else {
+                   document.getElementById("result").innerHTML = b + " xuất hiện:  "+count + " lần"
+               }
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

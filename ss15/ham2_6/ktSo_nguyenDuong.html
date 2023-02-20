@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên dương </title>
+</head>
+<body>
+<label for="input">Mời Nhập Số</label>;
+<input type="number" id = "input">;
+<br>
+<br>
+<button onclick="check()">Kiểm Tra</button>;
+<br>
+<br>
+<p id = "result"></p>;
+<script>
+  function check(){
+    let a = +document.getElementById("input").value;
+    if ( (Number.isInteger(a)) && a>0){
+      document.getElementById("result").innerHTML = a + " là số nguyên Dương"
+    }else {
+      document.getElementById("result").innerHTML = a + " Không phải Là Số nguyên dương";
+    }}
+</script>
+</body>
+</html>
