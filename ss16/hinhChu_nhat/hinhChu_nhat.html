@@ -5,18 +5,68 @@
     <title>Hình Chữ Nhật</title>
 </head>
 <body>
+<canvas id="myCanvas"  style="border:1px solid #d3d3d3;width:100% ;height:100%">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+<button onclick="createRec()">tao hcn</button>
 <script>
     class Rectangle {
-        constructor(length,width,acreage,perimeter, display) {
-            this.length = length;
+        constructor(height, width) {
+            this.height = height;
             this.width = width;
-            this.acreage = acreage;
-            this.perimeter = perimeter;
-            this.display = display;
+        }
+
+        getHeigth() {
+            return this.height;
+        }
+
+        setHeigth(heigth) {
+            this.height = heigth;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+
+        setWidth(width) {
+            this.width = width;
+        }
+
+        getChuVi() {
+            return (this.width + this.height) * 2;
+        }
+
+        getDienTich() {
+            return this.height * this.width;
+        }
+
+        getRectangleInformation() {
+            return this.width + " Là chiều rộng " + this.height + " Là chiều dài"
+        }
+
+        drawCanvas(color) {
+            var canvas = document.getElementById("myCanvas");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = color;    // color of fill
+                ctx.fillRect(10, 40, this.height, this.width); // create rectangle
+            }
         }
     }
-    let Rectangle = new Rectangle(40,20,length * innerWidth,(length + innerWidth) * 2);
-document.write(Rectangle.getRectangleInformation());
+
+    // let Rectangle = new Rectangle(100 + "la chieu rong" + 200 + "la chieu dai");
+    // document.write(Rectangle.getRectangleInformation())
+    function createRec() {
+        let dai = +prompt("nhap chieu dai");
+        let rong = +prompt("nhap chieu rong");
+        let hcn = new Rectangle(dai, rong);
+        let color = prompt("nhap mau");
+        alert(hcn.getRectangleInformation() + " Hình chữ nhật Vừa được tạo");
+        hcn.drawCanvas(color);
+        alert(hcn.getDienTich() + " Là Diện Tích Hình Chữ Nhật");
+        alert(hcn.getChuVi() + "Là chu vi hình chữ nhật");
+    }
 </script>
+
 </body>
 </html>

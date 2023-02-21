@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<form>
+    <p>
+        <label>Celsius</label>
+        <input id="inputCelsius" type="number" placeholder="Celsius">
+    </p>
+    <br>
+    <button type="button" onclick="temperatureConverter()">Kết quả</button>
+    <p>Kelvin: <span id="outputKelvin"></span></p>
+    <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+</form>
+
+<script>
+    function temperatureConverter() {
+        let a = +document.getElementById("inputCelsius").value;
+        let change = new ConvertTemperature(a);
+        document.getElementById("outputKelvin").innerHTML = change.getKelvin();
+        document.getElementById("outputFahrenheit").innerHTML = change.getFahrenheit();
+    }
+
+    class ConvertTemperature {
+        constructor(celcius) {
+            this._celcius = celcius;
+        }
+
+        getCelcius() {
+            return this._celcius;
+        }
+
+        getFahrenheit() {
+            return (this._celcius - 32) / 1.8;
+        }
+
+        getKelvin() {
+            return this._celcius + 273.15;
+        }
+
+
+        get celcius() {
+            return this._celcius;
+        }
+
+        set celcius(value) {
+            this._celcius = value;
+        }
+    }
+</script>
+</body>
+</html>
