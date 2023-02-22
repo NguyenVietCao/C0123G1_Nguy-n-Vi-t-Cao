@@ -14,14 +14,19 @@
     <button type="button" onclick="temperatureConverter()">Kết quả</button>
     <p>Kelvin: <span id="outputKelvin"></span></p>
     <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+    <p id ="nhapLai"></p>
 </form>
 
 <script>
     function temperatureConverter() {
         let a = +document.getElementById("inputCelsius").value;
-        let change = new ConvertTemperature(a);
-        document.getElementById("outputKelvin").innerHTML = change.getKelvin();
-        document.getElementById("outputFahrenheit").innerHTML = change.getFahrenheit();
+        if (a<-273){
+            document.getElementById("nhapLai").innerHTML = "Vui Long Nhap Lai";
+        } else {
+            let change = new ConvertTemperature(a);
+            document.getElementById("outputKelvin").innerHTML = change.getKelvin();
+            document.getElementById("outputFahrenheit").innerHTML = change.getFahrenheit();
+        }
     }
 
     class ConvertTemperature {
@@ -29,9 +34,6 @@
             this._celcius = celcius;
         }
 
-        getCelcius() {
-            return this._celcius;
-        }
 
         getFahrenheit() {
             return (this._celcius - 32) / 1.8;
