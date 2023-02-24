@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management</title>
+</head>
+<body>
+<div>
+    <form>
+        <h2 style="color: dodgerblue">Biểu mẫu thêm - sửa học sinh</h2>
+        <label for="nameStudent">Tên học sinh: </label>
+        <input type="text" placeholder="Nhập tên học sinh" id="nameStudent">
+        <label for="genderStudent">Giới tính</label>
+        <select name="gender" id="genderStudent">
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+        </select>
+        <br>
+        <br>
+        <label for="classes">Lớp</label>
+        <input type="text" placeholder="Nhập lớp" id="classes">
+        <label for="birthday">Ngày sinh</label>
+        <input type="date" id="birthday">
+        <button type="button" onclick="createStudent()">Thêm mới</button>
+        <button type="reset">Làm sạch</button>
+    </form>
+</div>
+<hr>
+<h2 style="color: #FA8176">Danh sách các học sinh</h2>
+<div id="tableStudentList"></div>
+<script>
+    class Student {
+        constructor(studentName, classes, gender, birthday) {
+            this.studentName = studentName;
+            this.classes = classes;
+            this.gender = gender;
+            this.birthday = birthday;
+        }
+    }
+    // Khởi tạo những đối tượng mặc định.
+    let student1 = new Student("Nguyen Viet Cao", "C0123G1", "Nam", "1988");
+    let student2 = new Student("Nguyen Lai Tam Vu", "C0123G1", "Nam", "1998");
+    let student3 = new Student("Nguyen Hoang Chau", "C0123G1", "Nu", "2008");
+    let studentList = [];
+    studentList.push(student1);
+    studentList.push(student2);
+    studentList.push(student3);
+    displayStudentList(studentList);
+
+    // Chức năng hiển thị danh sách
+    function displayStudentList(studentList) {
+        let table = "<table border='1' style='border-collapse: collapse'>";
+        table += "<tr>" +
+            "<th>STT</th>" +
+            "<th>Tên</th>" +
+            "<th>Giới tính</th>" +
+            "<th>Năm sinh</th>" +
+            "<th>Lớp</th>" +
+            "<th colspan='2'>Thao tác</th>" +
+            " </tr>";
+        for (let i = 0; i < studentList.length; i++) {
+            table += "<tr>" +
+                "<td>" + (i + 1) + "</td>" +
+                "<td>" + studentList[i].studentName + "</td>" +
+                "<td>" + studentList[i].gender + "</td>" +
+                "<td>" + studentList[i].birthday + "</td>" +
+                "<td>" + studentList[i].classes + "</td>" +
+                "<td><button onclick=\"deleteStudent(" + i + ")\">Xoá</button></td>" +
+                "<td><button onclick=\"updateStudent(" + i + ")\">Sửa</button></td>" +
+                "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("tableStudentList").innerHTML = table;
+    }
+
+    // Chức năng xoá
+    function deleteStudent(indexStudent) {
+        const confirmDelete = confirm("Bạn muốn xoá học sinh " +
+            studentList[indexStudent].studentName + " ko?");
+        if (confirmDelete) {
+            studentList.splice(indexStudent, 1);
+            alert("Bạn đã xoá thành công.");
+            displayStudentList(studentList);
+        } else {
+            alert("Bạn đã không xoá.");
+        }
+    }
+
+    // khởi tạo đối tượng đúng thứ tự trong constructor(studentName, classes, gender, birthday)
+    function createStudent() {
+        let name = document.getElementById("nameStudent").value;
+        let gender = document.getElementById("genderStudent").value;
+        let classes = document.getElementById("classes").value;
+        let birthday = document.getElementById("birthday").value;
+        let newStudent = new Student(name, classes, gender, birthday);
+        studentList.push(newStudent);
+        displayStudentList(studentList);
+        document.getElementById("nameStudent").value = "";
+        document.getElementById("genderStudent").value = "";
+        document.getElementById("classes").value = "";
+        document.getElementById("birthday").value = "";
+    }
+
+    // Chức năng sửa
+    function updateStudent(indexStudent) {
+        alert(indexStudent);
+    }
+</script>
+</body>
+</html>

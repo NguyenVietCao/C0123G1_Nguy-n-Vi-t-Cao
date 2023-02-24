@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tăng giảm theo chu kỳ</title>
+</head>
+<body>
+<script>
+  let n = +prompt("Nhập độ dài mảng");
+  let arr = [];
+  for (let i = 0; i < n; i++){
+    arr[i] = +prompt("Nhập số thử " + i);
+  }
+  document.write(arr);
+  for (let i = 0; i < n; i++){
+    if ((arr[i + 1] - arr[i] === arr[i] - arr[i-1])){
+      document.write("True");
+    }else {
+      document.write("false");
+    }
+  }
+</script>
+</body>
+</html>

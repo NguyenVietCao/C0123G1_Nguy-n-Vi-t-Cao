@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng Chẳn ở vị trí lẻ</title>
+</head>
+<body>
+<label for="input">Nhập số</label>;
+<input type="number" id = "input">;
+<button onclick="enter()">nhap</button>
+<button onclick="sumEven()">Tong</button>;
+<p id = "result"></p>
+
+<script>
+  let arr = [];
+function enter(){
+  let n;
+
+    n = +document.getElementById("input").value;
+    arr.push(n)
+
+  console.log(arr)
+}
+function sumEven(){
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i]%2 == 0 && i%2==1){
+      sum = sum + arr[i];
+    }else {
+      continue;
+    }
+
+  }
+  document.getElementById("result").innerHTML = sum;
+
+}
+
+</script>
+</body>
+</html>
