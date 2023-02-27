@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n = +prompt("Nhập vào số phần tử trong mảng.");
+  let a = [];
+  let b = [];
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    a[i] = +prompt("Nhập phần tử." + i);
+    sum += a[i];
+    b[i] = sum;
+  }
+  alert("Prefix sums của mảng là:" + b);
+</script>
+</body>
+</html>

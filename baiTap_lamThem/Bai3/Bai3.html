@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tang Giảm Theo Chu Kỳ</title>
+</head>
+<body>
+<script>
+  let n=+prompt("nhap so phan tu mang");
+  let arr =[];
+  for(let j=0;j<n;j++){
+    arr[j]=+prompt("nhap phan tu"+j);
+  }
+  document.write("mang moi duoc nhap la:"+arr+"<br>");
+  function checkArr(arr){
+    let dem=0;
+    let dem1=0;
+    let kc=arr[0]-arr[1];
+    let kc1=arr[1]-arr[0];
+    for(let i=0;i<arr.length-1;i++){
+      if(arr[i]-arr[i+1]==kc){
+        dem++;
+      }
+      if(arr[i]-arr[i+1]==kc1){
+        dem1++;
+      }
+    }
+    if(dem1==arr.length-1 || dem==arr.length-1){
+      document.write("true");
+      return;
+    }
+    else{
+      document.write("false");
+      return;
+    }
+  }
+  checkArr(arr);
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lương Nhân Viên</title>
+</head>
+<body>
+<div>
+    <form>
+        <h2 style="color: dodgerblue">Danh Sách Nhân Viên</h2>
+        <label for="nameStaff">Tên Nhân Viên: </label>
+        <input type="text" placeholder="Nhập Tên Nhân Viên" id="nameStaff">
+        <label for="genderStudent">Giới tính</label>
+        <select name="gender" id="genderStudent">
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+        </select>
+        <br>
+        <br>
+        <label for="classes">Lương</label>
+        <input type="text" placeholder="Nhập Lương" id="classes">
+        <label for="birthday">Ngày sinh</label>
+        <input type="date" id="birthday">
+        <button type="button" onclick="createStaff()">Thêm mới</button>
+        <button type="reset">Làm sạch</button>
+    </form>
+</div>
+<hr>
+<h2 style="color: #FA8176">Danh Sách Nhân Viên</h2>
+<div id="tableStaffList"><table border="1" style="border-collapse: collapse"><tbody><tr><th>STT</th><th>Tên</th><th>Giới tính</th><th>Năm sinh</th><th>Lớp</th><th colspan="2">Thao tác</th> </tr><tr><td>1</td><td>Nguyen Viet Cao</td><td>Nam</td><td>1988</td><td>C0123G1</td><td><button onclick="deleteStudent(0)">Xoá</button></td><td><button onclick="updateStudent(0)">Sửa</button></td></tr><tr><td>2</td><td>Nguyen Lai Tam Vu</td><td>Nam</td><td>1998</td><td>C0123G1</td><td><button onclick="deleteStudent(1)">Xoá</button></td><td><button onclick="updateStudent(1)">Sửa</button></td></tr><tr><td>3</td><td>Nguyen Hoang Chau</td><td>Nu</td><td>2008</td><td>C0123G1</td><td><button onclick="deleteStudent(2)">Xoá</button></td><td><button onclick="updateStudent(2)">Sửa</button></td></tr></tbody></table></div>
+
+<script>
+
+  class Staff{
+    constructor(StaffName, luong, gender, birthday) {
+
+      this.StaffName = name;
+      this.luong = luong;
+      this.gender = gender;
+      this.bỉthday = birthday;
+    }
+  }
+  //Phần Tử Mặc Định
+
+  let Staff1 = new Staff("Nguyễn Viết Cao", 0,0,0);
+  let Staff2 = new Staff("Nguyễn Phúc QUÝ",0,0,0);
+  let StaffList = [];
+  StaffList.push(Staff1);
+  StaffList.push(Staff2);
+  displayStaffList(StaffList);
+
+  //Chức Năng Hiển Thị Danh Sách
+
+  function displayStaffList(StaffList){
+      let table = "<table border='1' style='border-collapse: collapse'>";
+      table += "<tr>" +
+              "<th>STT</th>" +
+              "<th>Tên</th>" +
+              "<th>Giới tính</th>" +
+              "<th>Năm sinh</th>" +
+              "<th>Lương</th>" +
+              "<th colspan='2'>Thao tác</th>" +
+              " </tr>";
+      for (let i = 0; i < StaffList.length; i++) {
+        table += "<tr>" +
+                "<td>" + (i + 1) + "</td>" +
+                "<td>" + StaffList[i].StaffName + "</td>" +
+                "<td>" + StaffList[i].gender + "</td>" +
+                "<td>" + StaffList[i].birthday + "</td>" +
+                "<td>" + StaffList[i].luong + "</td>" +
+                "<td><button onclick=\"deleteStaff(" + i + ")\">Xoá</button></td>" +
+                "<td><button onclick=\"updateStaff(" + i + ")\">Sửa</button></td>" +
+                "</tr>";
+      }
+      table += "</table>";
+      document.getElementById("tableStaffList").innerHTML = table;
+    }
+    // Chức năng xoá
+  function deleteStaff(indexStaff) {
+      const confirmDelete = confirm("Bạn muốn xoá nhân viên này " +
+          StaffList[indexStaff].StaffName + " ko?");
+      if (confirmDelete) {
+          StaffList.splice(indexStaff, 1);
+          alert("Bạn đã xoá thành công.");
+          displayStaffList(StaffList);
+      } else {
+          alert("Bạn đã không xoá.");
+      }
+  }
+ // khởi tạo đối tượng đúng thứ tự trong constructor(studentName, classes, gender, birthday)
+  function deleteStudent(indexStaff) {
+      const confirmDelete = confirm("Bạn muốn xoá học sinh " +
+          StaffList[indexStudent].StaffName + " ko?");
+      if (confirmDelete) {
+          StaffList.splice(indexStaff, 1);
+          alert("Bạn đã xoá thành công.");
+          displayStudentList(StaffList);
+      } else {
+          alert("Bạn đã không xoá.");
+      }
+  }
+  // Chức năng sửa
+  function updateStudent(indexStaff) {
+      alert(indexStaff);
+  }
+
+</script>
+</body>
+</html>

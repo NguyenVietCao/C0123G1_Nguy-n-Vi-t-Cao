@@ -6,19 +6,36 @@
 </head>
 <body>
 <script>
-  let n = +prompt("Nhập độ dài mảng");
-  let arr = [];
-  for (let i = 0; i < n; i++){
-    arr[i] = +prompt("Nhập số thử " + i);
-  }
-  document.write(arr);
-  for (let i = 0; i < n; i++){
-    if ((arr[i + 1] - arr[i] === arr[i] - arr[i-1])){
-      document.write("True");
-    }else {
-      document.write("false");
+    let n = +prompt("Nhập độ dài mảng");
+    let arr = [];
+
+
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập số thử " + i);
     }
-  }
+    document.write(arr);
+    let flag ;
+    const e = arr[1] - arr[0];
+    for (let i = 0; i < n - 1; i++) {
+        if (e === arr[i +1] - arr[i] && e!== 0) {
+            flag = true;
+        } else {
+            flag = false
+        }
+
+    }
+    if (flag === true){
+        alert("ok")
+    }else {
+        alert("no")
+    }
+    // for (let i = 0; i < n; i++){
+    //   if ((arr[i + 1] - arr[i] === arr[i] - arr[i-1])){
+    //     document.write("True");
+    //   }else {
+    //     document.write("false");
+    //   }
+    // }
 </script>
 </body>
 </html>

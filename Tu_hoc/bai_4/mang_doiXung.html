@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng Đối Xứng</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Độ Dài Mảng");
+    let arr = [];
+    let arrNew;
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập Phần Tử Thứ :" + i)
+    }
+    document.write(arr);
+    arrNew = arr.reverse();
+    document.write(arrNew);
+
+        if (arr[0] !== arrNew[0]){
+            alert("No");
+        }else {
+            alert("ok");
+        }
+
+
+</script>
+</body>
+</html>

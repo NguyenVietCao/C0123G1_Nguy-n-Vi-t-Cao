@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let b = [];
+    let c = [];
+    let n1 = +prompt("Nhập vào số phần tử trong mảng A.");
+    for (let i = 0; i < n1; i++) {
+        a[i] = +prompt("Nhập phần tử." + i);
+    }
+    let n2 = +prompt("Nhập vào số phần tử trong mảng B.");
+    for (let j = 0; j < n2; j++) {
+        b[j] = +prompt("Nhập phần tử." + j);
+    }
+    for (let j = 0; j < b.length; j++) {
+        let flag = true;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] === b[j]) {
+                flag = false;
+                break;
+            }
+        }
+        for (let k = 0; k < c.length; k++) {
+            if (b[j] === c[k]) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            c.push(b[j]);
+        }
+    }
+    document.write("Kết quả missingValue(A, B) =" + c);
+</script>
+</body>
+</html>

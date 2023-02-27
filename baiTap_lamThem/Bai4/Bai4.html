@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mang Đối Xứng</title>
+</head>
+<body>
+<script>
+  let n=+prompt("nhap so phan tu mang");
+  let arr =[];
+  for(let j=0;j<n;j++){
+    arr[j]=+prompt("nhap phan tu"+j);
+  }
+  document.write("mang nhap la: "+arr+"<br>");
+  let a=0;
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]==arr[arr.length-1-i]){
+      a++;
+    }
+    else{
+      document.write("la mang k doi xunng");
+      break;
+    }
+  }
+  if(a==arr.length){
+    document.write("la mang doi xung");
+  }
+</script>
+</body>
+</html>

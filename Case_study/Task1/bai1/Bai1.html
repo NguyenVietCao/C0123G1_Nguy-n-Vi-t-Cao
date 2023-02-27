@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lương Nhân Viên</title>
+</head>
+<body>
+<script>
+  let luong = +prompt("Nhập lương nhân viên.");
+  let luongRong = 0;
+
+  function check() {
+    if (luong >= 15) {
+      document.write("Thuế thu nhập là 20%" + "<br>" + "Lương ròng là:" + (luongRong = luong - (luong * 0.2)) + "triệu");
+    } else if (luong > 7) {
+      document.write("Thuế thu nhập là 10%" + "<br>" + "Lương ròng là:" + (luongRong = luong - (luong * 0.1)) + "triệu");
+    } else if (luong > 0 && luong < 7) {
+      document.write("Thuế thu nhập là 5%" + "<br>" + "Lương ròng là:" + (luongRong = luong - (luong * 0.05)) + "triệu");
+    } else {
+      alert("Bạn đã nhập sai.");
+    }
+  }
+
+  check();
+</script>
+</body>
+</html>

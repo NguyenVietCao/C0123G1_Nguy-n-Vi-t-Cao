@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff_List</title>
+</head>
+<body>
+<div>
+    <form>
+        <h2 style="color: dodgerblue">Biểu mẫu thêm - sửa Nhân Viên</h2>
+        <label for="nameStaff">Tên nhân viên: </label>
+        <input type="text" placeholder="Nhập tên nhân viên" id="nameStaff">
+        <label for="genderStaff">Giới tính</label>
+        <select name="gender" id="genderStaff">
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+        </select>
+        <br>
+        <br>
+        <label for="luong">Lớp</label>
+        <input type="text" placeholder="Nhập lương" id="luong">
+        <label for="birthday">Ngày sinh</label>
+        <input type="date" id="birthday">
+        <button type="button" onclick="createStaff()">Thêm mới</button>
+        <button type="reset">Làm sạch</button>
+    </form>
+</div>
+<hr>
+<h2 style="color: #FA8176">Danh sách các nhân viên</h2>
+<div id="tableStaffList">
+    <table border="1" style="border-collapse: collapse">
+        <tbody>
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Giới tính</th>
+            <th>Năm sinh</th>
+            <th>Lương</th>
+            <th colspan="2">Thao tác</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Nguyen Viet Cao</td>
+            <td>Nam</td>
+            <td>1988</td>
+            <td>C0123G1</td>
+            <td>
+                <button onclick="deleteStaff(0)">Xoá</button>
+            </td>
+            <td>
+                <button onclick="updateStaff(0)">Sửa</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nguyen Lai Tam Vu</td>
+            <td>Nam</td>
+            <td>1998</td>
+            <td>C0123G1</td>
+            <td>
+                <button onclick="deleteStudent(1)">Xoá</button>
+            </td>
+            <td>
+                <button onclick="updateStaff(1)">Sửa</button>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Nguyen Hoang Chau</td>
+            <td>Nu</td>
+            <td>2008</td>
+            <td>C0123G1</td>
+            <td>
+                <button onclick="deleteStaff(2)">Xoá</button>
+            </td>
+            <td>
+                <button onclick="updateStaff(2)">Sửa</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    class Staff {
+        constructor(staffName, luong, gender, birthday) {
+            this.staffName = staffName;
+            this.luong = luong;
+            this.gender = gender;
+            this.birthday = birthday;
+        }
+    }
+
+    // Khởi tạo những đối tượng mặc định.
+    let staff1 = new Staff("Nguyen Viet Cao", "C0123G1", "Nam", "1988");
+    let staff2 = new Staff("Nguyen Lai Tam Vu", "C0123G1", "Nam", "1998");
+    let staff3 = new Staff("Nguyen Hoang Chau", "C0123G1", "Nu", "2008");
+    let staffList = [];
+    staffList.push(staff1);
+    staffList.push(staff2);
+    staffList.push(staff3);
+    displayStaffList(staffList);
+
+    // Chức năng hiển thị danh sách
+    function displayStaffList(staffList) {
+        let table = "<table border='1' style='border-collapse: collapse'>";
+        table += "<tr>" +
+            "<th>STT</th>" +
+            "<th>Tên</th>" +
+            "<th>Giới tính</th>" +
+            "<th>Năm sinh</th>" +
+            "<th>Lương</th>" +
+            "<th colspan='2'>Thao tác</th>" +
+            " </tr>";
+        for (let i = 0; i < staffList.length; i++) {
+            table += "<tr>" +
+                "<td>" + (i + 1) + "</td>" +
+                "<td>" + staffList[i].staffName + "</td>" +
+                "<td>" + staffList[i].gender + "</td>" +
+                "<td>" + staffList[i].birthday + "</td>" +
+                "<td>" + staffList[i].luong + "</td>" +
+                "<td><button onclick=\"deleteStaff(" + i + ")\">Xoá</button></td>" +
+                "<td><button onclick=\"updateStaff(" + i + ")\">Sửa</button></td>" +
+                "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("tableStaffList").innerHTML = table;
+    }
+
+    // Chức năng xoá
+    function deleteStaff(indexStaff) {
+        const confirmDelete = confirm("Bạn muốn xoá nhân viên  " +
+            staffList[indexStaff].staffName + " ko?");
+        if (confirmDelete) {
+            staffList.splice(indexStaff, 1);
+            alert("Bạn đã xoá thành công.");
+            displayStaffList(staffList);
+        } else {
+            alert("Bạn đã không xoá.");
+        }
+    }
+
+    // khởi tạo đối tượng đúng thứ tự trong constructor(studentName, classes, gender, birthday)
+    function createStaff() {
+        let name = document.getElementById("nameStaff").value;
+        let gender = document.getElementById("genderStaff").value;
+        let luong = document.getElementById("luong").value;
+        let birthday = document.getElementById("birthday").value;
+        let newStaff = new Staff(name, luong, gender, birthday);
+        staffList.push(newStaff);
+        displayStaffList(staffList);
+        document.getElementById("nameStaff").value = "";
+        document.getElementById("genderStaff").value = "";
+        document.getElementById("luong").value = "";
+        document.getElementById("birthday").value = "";
+    }
+    // Chức năng sửa
+    function updateStaff(indexStaff) {
+      alert(indexStaff);
+    }
+
+</script>
+
+</body>
+</html>

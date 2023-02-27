@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Không có phần tử trùng nhau</title>
+</head>
+<body>
+<script>
+  let n=+prompt("nhap so phan tu mang");
+  let arr =[];
+  for(let j=0;j<n;j++){
+    arr[j]=+prompt("nhap phan tu"+j);
+  }
+  let a=0;
+  OUTLOOP: for(let i=0;i<arr.length;i++){
+    for(let k=i+1;k<arr.length;k++){
+      if(arr[k]===arr[i]){
+        alert("co phan tu trung");
+        a++;
+        break OUTLOOP;
+      }
+    }
+  }
+  // document.write(a);
+  if(a==0){
+    document.write(arr);
+  }
+  else{
+    alert("ban phai f5 de nhap lai^^: ");
+  }
+</script>
+</body>
+</html>
