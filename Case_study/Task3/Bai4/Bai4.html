@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Coffee</title>
+</head>
+<body>
+<script>
+    alert(`Mời xem món
+  1. Cà Phê(15k)
+  2. Cam vắt(25k)
+  3. Nước ép(20k)
+  4. Cà chua(16k)
+  5. Nước lọc(10k)
+  6. Nước dừa(25k)
+  7. thoat chọn món`);
+
+    let bill = "";
+    let drink = ["Cà Phê(15k)","Cam vắt(25k)","Nước ép(20k)","Cà chua(16k)","Nước lọc(10k)","Nước dừa(25k)"];
+    let b = [15, 25, 20, 16, 10, 25];
+    let total = 0;
+    do{
+        let a = +prompt("Mời chọn món");
+        if(a===7){
+            break;
+        }else if (a > 7){
+            alert("Món không có thực đơn")
+            continue;
+        }
+        let c = +prompt("Mời chọn số lượng");
+
+        if (c > 0) {
+            total = c * b[a - 1];
+            bill += drink[a-1] + ": " + c + " ly gia " + total+" ";
+        }
+        alert(bill);
+
+    }while(true);
+
+    document.write(total);
+</script>
+</body>
+</html>

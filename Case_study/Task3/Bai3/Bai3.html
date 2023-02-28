@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [-2, -3, -1, -4, -7];
+    let b = [5, 2, 6, 1, 7];
+    let c;
+    let max = a[0] / b[0];
+    let indexMax = 0;
+    let i;
+    for (i = 0; i < a.length; i++) {
+        if (max < a[i] / b[i]) {
+            max = a[i] / b[i];
+            indexMax = i;
+        }
+
+    }
+    console.log(max);
+    console.log(indexMax);
+</script>
+</body>
+</html>
