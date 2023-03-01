@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị nhỏ,lớn nhất mảng 2 chiều</title>
+</head>
+<body>
+<script>
+  let m = +prompt("nhap số  m");
+  let n = +prompt("nhap số  n");
+  let arr = [];
+  for (let i = 0; i < m; i++) {
+    arr[i] = [];
+    for (let j = 0; j < n; j++) {
+      arr[i][j] = +prompt("nhap phan tu");
+    }
+  }
+  document.write("Mảng 2 chiều arr là: " + arr + "<br>");
+  function MinMaxArr(arr) {
+    let max = arr[0][0];
+    let min = arr[0][0];
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr[i].length; j++) {
+        if (arr[i][j] > max) {
+          max = arr[i][j];
+        }
+        if (arr[i][j] < min) {
+          min = arr[i][j];
+        }
+      }
+    }
+    document.write("Số lớn nhất trong mảng: " + max + "<br>");
+    document.write("Số nhỏ nhất trong mảng: " + min);
+    return max, min;
+  }
+  MinMaxArr(arr);
+</script>
+</body>
+</html>

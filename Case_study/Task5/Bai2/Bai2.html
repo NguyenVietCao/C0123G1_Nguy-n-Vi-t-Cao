@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let m = +prompt("nhap m");
+  let n = +prompt("nhap n");
+  let arr = [];
+  let arrNew = [];
+  for (let i = 0; i < m; i++) {
+    arr[i] = [];
+    for (let j = 0; j < n; j++) {
+      arr[i][j] = +prompt("nhap phan tu");
+      let dem = 0;
+      for (let k = 1; k < arr[i][j]; k++) {
+        if (arr[i][j] % k == 0) {
+          dem++;
+        }
+      }
+      if (dem < 2 && arr[i][j] > 1) {
+        arrNew.push(arr[i][j]);
+      }
+    }
+  }
+  document.write("Mảng 2 chiều arr là: " + arr + "<br>");
+  document.write("Số nguyên tố trong mảng là: " + arrNew + " và có tổng số là " + arrNew.length + " số");
+</script>
+</body>
+</html>

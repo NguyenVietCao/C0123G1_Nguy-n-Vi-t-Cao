@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let m = +prompt("nhap m");
+  let n = +prompt("nhap n");
+  let arr = [];
+  let sum = 0;
+  for (let i = 0; i < m; i++) {
+    arr[i] = [];
+    for (let j = 0; j < n; j++) {
+      arr[i][j] = +prompt("nhap phan tu");
+      if (arr[i][j] % 2 == 0) {
+        sum = sum + arr[i][j];
+      }
+    }
+  }
+  document.write("Mảng 2 chiều arr là: " + arr + "<br>");
+  document.write("Tổng các số chẵn trong mảng: " + sum);
+</script>
+</body>
+</html>
